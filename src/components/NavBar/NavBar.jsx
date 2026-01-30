@@ -21,10 +21,10 @@ const NavBar = () => {
        }
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl">ShoeX</a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 gap-5">
+    <ul className="menu menu-horizontal px-1 gap-5 cursor-pointer">
       {
             links
       }
