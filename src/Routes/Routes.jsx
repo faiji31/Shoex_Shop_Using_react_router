@@ -10,7 +10,10 @@ export const router = createBrowserRouter([
     Component:Root,
     errorElement: <ErrorPage></ErrorPage>,
     children:[
-      {index: true, path: '/', Component:Home}
+      {index: true,
+            loader:()=>fetch('shoeData.json'),
+            
+            path: '/', Component:Home}
     ]
   },
 ]);
