@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Shoe = ({ SingleShoe }) => {
-  const { productName, brand, image, price, rating, stock, shopName, tags } = SingleShoe;
+  const { productName, brand,productId, image, price, rating, stock, shopName, tags } = SingleShoe;
 
   return (
+    <Link to={`/ShoeDetails/${productId}`}>
     <div className="card w-96 bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 border border-base-200 group">
-      {/* Image Section with Badge */}
+     
       <figure className="relative overflow-hidden pt-4 px-4">
         <img
           src={image}
@@ -20,7 +22,7 @@ const Shoe = ({ SingleShoe }) => {
       </figure>
 
       <div className="card-body gap-1">
-        {/* Brand & Rating Row */}
+      
         <div className="flex justify-between items-center text-xs font-semibold uppercase tracking-widest text-gray-400">
           <span>{brand}</span>
           <span className="flex items-center gap-1 text-orange-400">
@@ -28,13 +30,12 @@ const Shoe = ({ SingleShoe }) => {
           </span>
         </div>
 
-        {/* Title */}
         <h2 className="card-title text-2xl font-bold">{productName}</h2>
         
-        {/* Shop Info */}
+   
         <p className="text-sm text-gray-500 italic">Sold by: {shopName}</p>
 
-        {/* Tags */}
+     
         <div className="flex flex-wrap gap-2 my-2">
           {tags?.map((tag, index) => (
             <span key={index} className="badge badge-outline badge-sm opacity-70">
@@ -43,7 +44,7 @@ const Shoe = ({ SingleShoe }) => {
           ))}
         </div>
 
-        {/* Price and Action */}
+
         <div className="card-actions justify-between items-center mt-4">
           <div className="text-2xl font-black text-primary">
             ${price}
@@ -54,6 +55,7 @@ const Shoe = ({ SingleShoe }) => {
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 
